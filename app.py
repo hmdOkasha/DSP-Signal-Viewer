@@ -31,6 +31,18 @@ visibility: hidden;
 """, unsafe_allow_html=True)
 
 
+def save_as_pdf(statistics, fig, file_name):
+    # Set the PDF file name
+    pdf_file = f'{file_name}.pdf'
+
+    # Create a HTML string with the signal statistics and plot
+    fig_html1 = fig.to_html(full_html=False)
+    html_string = f"<h2>Signal Statistics</h2>{statistics}<br><br>{fig_html1}"
+
+    # Save the HTML string as a PDF file
+
+    pdfkit.from_string(html_string, pdf_file)
+
 
 def createfig(data, color_dropdown):
     plot_spot = st.empty()
@@ -132,27 +144,45 @@ with col1:
     # Upload file
     file = st.file_uploader("Please upload a file", type=[
                             "csv"], key="file_upload_1")
-    color = st.selectbox("Change 1th signal Color", options=[
+    color = st.selectbox("Change 1st signal Color", options=[
         "Blue", "Red", "Green", "Yellow"])
 
     # Read data and plot dynamic graph
     if file is not None:
         data = pd.read_csv(file)
         fig = createfig(data, color)
+        y = data.iloc[:, 1]
+        mean = np.mean(y)
+        std = np.std(y)
+        statistics = f"The mean is: {mean}The Standard Devation is : {std}"
+        st.write("The mean is :", mean,
+                 "The Standard Deviation is :", std)
         animate(data, fig)
         st.plotly_chart(fig, use_container_width=True)
-
+        if st.button("save as PDF"):
+            name = "signal1"
+            save_as_pdf(statistics, fig, name)
 
 
 with col2:
     # Upload file
     file1 = st.file_uploader("Please upload a file", type=[
                              "csv"], key="file_upload_2")
-    color1 = st.selectbox("Change 2th signal Color", options=[
+    color1 = st.selectbox("Change 2nd signal Color", options=[
         "Blue", "Red", "Green", "Yellow"])
     # Read data and plot dynamic graph
     if file1 is not None:
         data1 = pd.read_csv(file1)
         fig = createfig(data1, color1)
+        y = data1.iloc[:, 1]
+        mean1 = np.mean(y)
+        std1 = np.std(y)
+        statistics = f"The mean is: {mean1}The Standard Deviation is : {std1}"
+        st.write("The mean is :", mean1,
+                 "The Standard Deviation is :", std1)
+
         animate(data1, fig)
         st.plotly_chart(fig, use_container_width=True)
+        if st.button("Save as PDF"):
+            name1 = "signal2"
+            save_as_pdf(statistics, fig, name1)
