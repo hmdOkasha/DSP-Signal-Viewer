@@ -17,3 +17,4 @@ requirements-txt init
 streamlit run app.py
 ```
 ## Preview
+https://github.com/hmdOkasha/DSP-Signal-Viewer/assets/95878292/530b963d-0704-4d7f-92d5-8abff8ff9889
