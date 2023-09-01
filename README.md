@@ -18,5 +18,8 @@ streamlit run app.py
 ```
 ## 💻 Preview
 https://github.com/hmdOkasha/DSP-Signal-Viewer/assets/95878292/c7038170-1408-49d3-bac7-25d6599141d8
+Save pdf
+https://github.com/hmdOkasha/DSP-Signal-Viewer/assets/95878292/fda08873-b8cf-48a4-9301-928723ea6b40
+
 
 
