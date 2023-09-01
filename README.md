@@ -3,7 +3,7 @@ Using python and streamlit framework, we designed a signal-viewer web applicatio
 ## Built with
 ![Static Badge](https://img.shields.io/badge/Language-Python-red)
 ![Static Badge](https://img.shields.io/badge/Framework-Streamlit-red)
-## How to run the project
+## 🛠️ How to run the project
 1) Install streamlit using pip by writing this in your terminal
 ```bash
 pip install streamlit
