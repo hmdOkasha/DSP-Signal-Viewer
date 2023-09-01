@@ -8,4 +8,11 @@ Using python and streamlit framework, we designed a signal-viewer web applicatio
 ```bash
 pip install streamlit
 ```
-
+2) Install the required packages and modules:
+```bash
+requirements-txt init
+```
+3) Run the app by typing this into your terminal
+```bash
+streamlit run app.py
+```
