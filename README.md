@@ -16,7 +16,6 @@ requirements-txt init
 ```bash
 streamlit run app.py
 ```
-## ![💻](https://github.com/hmdOkasha/DSP-Signal-Viewer/assets/95878292/6ce628e0-0fce-4fd0-a11d-d2d501fc983f)
- Preview
+## 💻 Preview
 https://github.com/hmdOkasha/DSP-Signal-Viewer/assets/95878292/c7038170-1408-49d3-bac7-25d6599141d8
 
